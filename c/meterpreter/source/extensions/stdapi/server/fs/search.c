@@ -761,7 +761,7 @@ DWORD directory_search(wchar_t *directory, SEARCH_OPTIONS * pOptions, Packet * p
 	if (!firstFile) {
 		return ERROR_SUCCESS;
 	}
-	swprintf_s(firstFile, FS_MAX_PATH, L"%s\\*.*", directory);
+	swprintf_s(firstFile, len, L"%s\\*.*", directory);
 
 	HANDLE hFile = FindFirstFileW(firstFile, &FindData);
 	dprintf("%S", directory);
